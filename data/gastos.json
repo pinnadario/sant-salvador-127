@@ -1,0 +1,103 @@
+[
+  {
+    "id": 3001,
+    "tipo": "AGUA",
+    "descripcion": "AGUA 10/01/2025 - 21/03/2025 #20251946789",
+    "importe": 69.83,
+    "fecha": "2025-01-10"
+  },
+  {
+    "id": 3002,
+    "tipo": "AGUA",
+    "descripcion": "AGUA 07/03/2025 - 08/05/2025 #20253513319",
+    "importe": 96.89,
+    "fecha": "2025-03-07"
+  },
+  {
+    "id": 3003,
+    "tipo": "AGUA",
+    "descripcion": "AGUA 08/05/2025 - 08/07/2025 #20254980814",
+    "importe": 110.17,
+    "fecha": "2025-05-08"
+  },
+  {
+    "id": 3004,
+    "tipo": "GAS",
+    "descripcion": "GAS 18/12/2024 - 17/02/2025 #1NSN250200434093",
+    "importe": 90.70,
+    "fecha": "2024-12-18"
+  },
+  {
+    "id": 3005,
+    "tipo": "GAS",
+    "descripcion": "GAS 18/02/2025 - 11/04/2025 #1NSN250400327558",
+    "importe": 56.85,
+    "fecha": "2025-02-18"
+  },
+  {
+    "id": 3006,
+    "tipo": "GAS",
+    "descripcion": "GAS 12/04/2025 - 12/06/2025 #1NSN250600395730",
+    "importe": 72.50,
+    "fecha": "2025-04-12"
+  },
+  {
+    "id": 3007,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 01/01/2025 - 30/01/2025 #F25ES-00316224",
+    "importe": 70.06,
+    "fecha": "2025-01-01"
+  },
+  {
+    "id": 3008,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 31/01/2025 - 01/03/2025 #F25ES-00603405",
+    "importe": 73.41,
+    "fecha": "2025-01-31"
+  },
+  {
+    "id": 3009,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 01/03/2025 - 30/03/2025 #F25ES-00903699",
+    "importe": 51.79,
+    "fecha": "2025-03-01"
+  },
+  {
+    "id": 3010,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 01/04/2025 - 30/04/2025 #F25ES-01224379",
+    "importe": 44.70,
+    "fecha": "2025-04-01"
+  },
+  {
+    "id": 3011,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 01/05/2025 - 31/05/2025 #F25ES-01540777",
+    "importe": 45.33,
+    "fecha": "2025-05-01"
+  },
+  {
+    "id": 3012,
+    "tipo": "ELECTRICIDAD",
+    "descripcion": "LUZ 01/06/2025 - 29/06/2025 #F25ES-01884195",
+    "importe": 58.41,
+    "fecha": "2025-06-01"
+  },
+  {
+    "id": 3013,
+    "tipo": "OTROS",
+    "descripcion": "SEGURO PISO - Coste diario 0.62€ (Total anual 226.20€)",
+    "importe": 226.20,
+    "fecha": "2025-01-01"
+  },
+  {
+    "id": 3014,
+    "tipo": "OTROS",
+    "descripcion": "ESCALERA - Coste diario 1.27€ (Total anual 464.00€)",
+    "importe": 464.00,
+    "fecha": "2025-01-01"
+  },
+  {
+    "id": 3015,
+    "tipo": "INTERNET",
+    "descripcion": "INTERNET -
