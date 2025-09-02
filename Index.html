@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SANT SALVADOR 127</title>
+    <style>
+        body { font-family: monospace; background: #000; color: #00ff00; margin: 0; padding: 10px; }
+        .header { color: #ffff00; text-align: center; margin-bottom: 10px; }
+        .menu { margin: 10px 0; }
+        .menu button { background: #111; color: #00ffff; border: 1px solid #333; padding: 5px 10px; margin: 2px; cursor: pointer; }
+        .menu button:hover { background: #333; }
+        .section { display: none; margin: 10px 0; }
+        .section.active { display: block; }
+        table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        th, td { border: 1px solid #333; padding: 5px; text-align: left; }
+        th { background: #111; color: #ffff00; }
+        input, select { background: #000; color: #00ff00; border: 1px solid #333; padding: 3px; }
+        button { background: #111; color: #00ff00; border: 1px solid #333; padding: 3px 8px; margin: 2px; cursor: pointer; }
+        .form { margin: 10px 0; padding: 10px; border: 1px solid #333; }
+        .msg { background: #111; color: #ffff00; padding: 5px; margin: 5px 0; display: none; }
+        .github-info { background: #110011; color: #ff00ff; padding: 5px; margin: 5px 0; font-size: 10px; }
+        .small { font-size: 10px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>SANT SALVADOR 127 - SISTEMA v3.0 + GITHUB</h2>
+        <div id="stats">Iniciando...</div>
+        <div id="github-status" class="github-info">GitHub: Desconectado</div>
+    </div>
+    
+    <div class="menu">
+        <button onclick="mostrar('inquilinos')">1.INQUILINOS</button>
+        <button onclick="mostrar('gastos')">2.GASTOS</button>
+        <button onclick="mostrar('pagos')">3.PAGOS</button>
+        <button onclick="mostrar('balances')">4.BALANCES</button>
+        <button onclick="mostrar('datos')">5.DATOS</button>
+        <button onclick="cargarDesdeGitHub()" style="color: #ff00ff;">SYNC</button>
+    </div>
+    
+    <div id="msg" class="msg"></div>
+    
+    <!-- INQUILINOS -->
+    <div id="inquilinos" class="section active">
+        <h3>INQUILINOS</h3>
+        <div class="form">
+            <input type="text" id="nombre" placeholder="Nombre" style="width: 200px;">
+            <input type="date" id="checkin">
+            <input type="date" id="checkout">
+            <button onclick="addInquilino()">AÑADIR</button>
+        </div>
+        <table id="tabla-inquilinos">
+            <tr><th>NOMBRE</th><th>CHECK-IN</th><th>CHECK-OUT</th><th>ACCIÓN</th></tr>
+        </table>
+    </div>
+    
+    <!-- GASTOS -->
+    <div id="gastos" class="section">
+        <h3>GASTOS</h3>
+        <div class="form">
+            <select id="tipo">
+                <option>ELECTRICIDAD</option>
+                <option>AGUA</option>
+                <option>GAS</option>
+                <option>INTERNET</option>
+                <option>OTROS</option>
+            </select>
+            <input type="text" id="descripcion" placeholder="Descripción" style="width: 200px;">
+            <input type="number" id="importe" placeholder="€" step="0.01" style="width: 80px;">
+            <input type="date" id="fecha">
+            <button onclick="addGasto()">AÑADIR</button>
+        </div>
+        <table id="tabla-gastos">
+            <tr><th>FECHA</th><th>TIPO</th><th>DESCRIPCIÓN</th><th>IMPORTE</th><th>ACCIÓN</th></tr>
+        </table>
+    </div>
+    
+    <!-- PAGOS -->
+    <div id="pagos" class="section">
+        <h3>PAGOS</h3>
+        <div class="form">
+            <select id="pago-inquilino">
+                <option value="">Seleccionar inquilino...</option>
+            </select>
+            <input type="number" id="pago-importe" placeholder="€" step="0.01" style="width: 80px;">
+            <input type="text" id="pago-fecha" placeholder="dd/mm/yyyy" style="width: 100px;">
+            <button onclick="addPago()">AÑADIR</button>
+        </div>
+        <table id="tabla-pagos">
+            <tr><th>FECHA</th><th>INQUILINO</th><th>IMPORTE</th><th>ACCIÓN</th></tr>
+        </table>
+    </div>
+    
+    <!-- BALANCES -->
+    <div id="balances" class="section">
+        <h3>BALANCES</h3>
+        <div class="form">
+            <select id="inquilino-selector">
+                <option value="">Todos los inquilinos...</option>
+            </select>
+            <input type="text" id="desde" placeholder="01/05/2025" style="width: 100px;">
+            <input type="text" id="hasta" placeholder="31/07/2025" style="width: 100px;">
+            <button onclick="calcularBalance()">CALCULAR</button>
+        </div>
+        <table id="tabla-balances">
+            <tr><th>INQUILINO</th><th>PERÍODO</th><th>GASTOS 50%</th><th>PAGADO</th><th>BALANCE</th></tr>
+        </table>
+    </div>
+    
+    <!-- DATOS -->
+    <div id="datos" class="section">
+        <h3>DATOS & GITHUB</h3>
+        <div class="form">
+            <h4 style="color: #ffff00;">LOCAL:</h4>
+            <button onclick="exportarCSV()">EXPORTAR CSV</button>
+            <button onclick="resetLocal()">RESET LOCAL</button>
+            <br><br>
+            <h4 style="color: #ff00ff;">GITHUB:</h4>
+            <input type="text" id="github-repo" placeholder="pinnadario/sant-salvador-127" value="pinnadario/sant-salvador-127" style="width: 250px;">
+            <button onclick="configurarGitHub()">CONFIGURAR</button>
+            <button onclick="cargarDesdeGitHub()">CARGAR</button>
+        </div>
+        <div id="info-datos" class="small">URLs de datos:<br>
+            <span id="urls-info">Configura GitHub primero</span>
+        </div>
+    </div>
+
+    <script>
+        // VARIABLES GLOBALES
+        var inquilinos = [];
+        var gastos = [];
+        var pagos = [];
+        var githubConfig = {
+            usuario: 'pinnadario',
+            repo: 'sant-salvador-127',
+            baseURL: 'https://raw.githubusercontent.com/pinnadario/sant-salvador-127/main/data/'
+        };
+
+        // FUNCIONES BÁSICAS
+        function mensaje(txt) {
+            document.getElementById('msg').textContent = txt;
+            document.getElementById('msg').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('msg').style.display = 'none';
+            }, 4000);
+        }
+
+        function actualizarEstadoGitHub(estado, color) {
+            color = color || '#ff00ff';
+            document.getElementById('github-status').textContent = 'GitHub: ' + estado;
+            document.getElementById('github-status').style.color = color;
+        }
+
+        function mostrar(seccion) {
+            var secciones = ['inquilinos', 'gastos', 'pagos', 'balances', 'datos'];
+            for (var i = 0; i < secciones.length; i++) {
+                document.getElementById(secciones[i]).classList.remove('active');
+            }
+            document.getElementById(seccion).classList.add('active');
+            
+            if (seccion === 'pagos' || seccion === 'balances') {
+                actualizarSelectInquilinos();
+            }
+        }
+
+        // GITHUB INTEGRATION
+        function configurarGitHub() {
+            var repo = document.getElementById('github-repo').value || 'pinnadario/sant-salvador-127';
+            if (!repo || !repo.includes('/')) {
+                mensaje('Formato: usuario/repositorio');
+                return;
+            }
+
+            var partes = repo.split('/');
+            githubConfig.usuario = partes[0];
+            githubConfig.repo = partes[1];
+            githubConfig.baseURL = 'https://raw.githubusercontent.com/' + repo + '/main/data/';
+
+            localStorage.setItem('githubConfig', JSON.stringify(githubConfig));
+            actualizarEstadoGitHub('Configurado: ' + repo, '#00ff00');
+            
+            // Actualizar URLs info
+            document.getElementById('urls-info').innerHTML = 
+                '• ' + githubConfig.baseURL + 'inquilinos.json<br>' +
+                '• ' + githubConfig.baseURL + 'gastos.json<br>' +
+                '• ' + githubConfig.baseURL + 'pagos.json<br>' +
+                '• ' + githubConfig.baseURL + 'config.json';
+                
+            mensaje('GitHub configurado: ' + repo);
+        }
+
+        async function cargarDesdeGitHub() {
+            if (!githubConfig.baseURL) {
+                configurarGitHub();
+                return;
+            }
+
+            actualizarEstadoGitHub('Cargando...', '#ffff00');
+            
+            try {
+                var urls = [
+                    githubConfig.baseURL + 'inquilinos.json',
+                    githubConfig.baseURL + 'gastos.json',
+                    githubConfig.baseURL + 'pagos.json'
+                ];
+
+                var responses = await Promise.all([
+                    fetch(urls[0]),
+                    fetch(urls[1]),
+                    fetch(urls[2])
+                ]);
+
+                if (!responses[0].ok || !responses[1].ok || !responses[2].ok) {
+                    throw new Error('Error HTTP: archivos no encontrados');
+                }
+
+                inquilinos = await responses[0].json();
+                gastos = await responses[1].json();
+                pagos = await responses[2].json();
+
+                // Guardar también localmente
+                guardarLocal();
+                
+                mostrarInquilinos();
+                mostrarGastos();
+                mostrarPagos();
+                actualizarSelectInquilinos();
+                actualizarStats();
+
+                actualizarEstadoGitHub('Sincronizado ✓', '#00ff00');
+                mensaje('Datos cargados: ' + inquilinos.length + ' inquilinos, ' + gastos.length + ' gastos, ' + pagos.length + ' pagos');
+
+            } catch(e) {
+                console.log('Error GitHub:', e);
+                actualizarEstadoGitHub('Error: ' + e.message, '#ff4444');
+                mensaje('Error GitHub - usando datos locales');
+                cargarLocal();
+            }
+        }
+
+        // ALMACENAMIENTO LOCAL
+        function guardarLocal() {
+            localStorage.setItem('inquilinos', JSON.stringify(inquilinos));
+            localStorage.setItem('gastos', JSON.stringify(gastos));
+            localStorage.setItem('pagos', JSON.stringify(pagos));
+        }
+
+        function cargarLocal() {
+            try {
+                inquilinos = JSON.parse(localStorage.getItem('inquilinos') || '[]');
+                gastos = JSON.parse(localStorage.getItem('gastos') || '[]');
+                pagos = JSON.parse(localStorage.getItem('pagos') || '[]');
+                
+                if (inquilinos.length > 0 || gastos.length > 0 || pagos.length > 0) {
+                    mostrarInquilinos();
+                    mostrarGastos();
+                    mostrarPagos();
+                    actualizarSelectInquilinos();
+                    actualizarStats();
+                    mensaje('Datos locales cargados');
+                }
+            } catch(e) {
+                console.log('Error cargando local:', e);
+            }
+        }
+
+        // FUNCIONES CRUD
+        function addInquilino() {
+            var nombre = document.getElementById('nombre').value;
+            var checkin = document.getElementById('checkin').value;
+            var checkout = document.getElementById('checkout').value;
+            
+            if (!nombre || !checkin) {
+                mensaje('Faltan nombre y fecha de entrada');
+                return;
+            }
+            
+            inquilinos.push({
+                id: Date.now(),
+                nombre: nombre,
+                checkin: checkin,
+                checkout: checkout
+            });
+            
+            document.getElementById('nombre').value = '';
+            document.getElementById('checkin').value = '';
+            document.getElementById('checkout').value = '';
+            
+            guardarLocal();
+            mostrarInquilinos();
+            actualizarStats();
+            mensaje('Inquilino añadido (guardado localmente)');
+        }
+
+        function addGasto() {
+            var tipo = document.getElementById('tipo').value;
+            var desc = document.getElementById('descripcion').value;
+            var importe = parseFloat(document.getElementById('importe').value);
+            var fecha = document.getElementById('fecha').value;
+            
+            if (!desc || !importe || !fecha) {
+                mensaje('Faltan datos del gasto');
+                return;
+            }
+            
+            gastos.push({
+                id: Date.now(),
+                tipo: tipo,
+                descripcion: desc,
+                importe: importe,
+                fecha: fecha
+            });
+            
+            document.getElementById('descripcion').value = '';
+            document.getElementById('importe').value = '';
+            document.getElementById('fecha').value = '';
+            
+            guardarLocal();
+            mostrarGastos();
+            actualizarStats();
+            mensaje('Gasto añadido (guardado localmente)');
+        }
+
+        function addPago() {
+            var inquilinoId = document.getElementById('pago-inquilino').value;
+            var importe = parseFloat(document.getElementById('pago-importe').value);
+            var fecha = document.getElementById('pago-fecha').value;
+            
+            if (!inquilinoId || !importe || !fecha) {
+                mensaje('Faltan datos del pago');
+                return;
+            }
+            
+            var inquilino = null;
+            for (var i = 0; i < inquilinos.length; i++) {
+                if (inquilinos[i].id == inquilinoId) {
+                    inquilino = inquilinos[i];
+                    break;
+                }
+            }
+            var nombre = inquilino ? inquilino.nombre : 'Desconocido';
+            
+            pagos.push({
+                id: Date.now(),
+                inquilinoId: inquilinoId,
+                nombre: nombre,
+                importe: importe,
+                fecha: fecha
+            });
+            
+            document.getElementById('pago-inquilino').value = '';
+            document.getElementById('pago-importe').value = '';
+            document.getElementById('pago-fecha').value = '';
+            
+            guardarLocal();
+            mostrarPagos();
+            actualizarStats();
+            mensaje('Pago añadido (guardado localmente)');
+        }
+
+        function eliminar(tipo, id) {
+            if (!confirm('¿Eliminar este ' + tipo + '?')) return;
+            
+            if (tipo === 'inquilino') {
+                inquilinos = inquilinos.filter(function(i) { return i.id != id; });
+                mostrarInquilinos();
+            } else if (tipo === 'gasto') {
+                gastos = gastos.filter(function(g) { return g.id != id; });
+                mostrarGastos();
+            } else if (tipo === 'pago') {
+                pagos = pagos.filter(function(p) { return p.id != id; });
+                mostrarPagos();
+            }
+            
+            guardarLocal();
+            actualizarStats();
+            mensaje('Eliminado');
+        }
+
+        // FUNCIONES DE VISUALIZACIÓN
+        function mostrarInquilinos() {
+            var html = '<tr><th>NOMBRE</th><th>CHECK-IN</th><th>CHECK-OUT</th><th>ACCIÓN</th></tr>';
+            for (var i = 0; i < inquilinos.length; i++) {
+                var inq = inquilinos[i];
+                html += '<tr>';
+                html += '<td>' + inq.nombre + '</td>';
+                html += '<td>' + inq.checkin + '</td>';
+                html += '<td>' + (inq.checkout || '<span style="color:#00ff00">Activo</span>') + '</td>';
+                html += '<td><button onclick="eliminar(\'inquilino\',' + inq.id + ')">DEL</button></td>';
+                html += '</tr>';
+            }
+            document.getElementById('tabla-inquilinos').innerHTML = html;
+        }
+
+        function mostrarGastos() {
+            var html = '<tr><th>FECHA</th><th>TIPO</th><th>DESCRIPCIÓN</th><th>IMPORTE</th><th>ACCIÓN</th></tr>';
+            for (var i = 0; i < gastos.length; i++) {
+                var g = gastos[i];
+                html += '<tr>';
+                html += '<td>' + g.fecha + '</td>';
+                html += '<td>' + g.tipo + '</td>';
+                html += '<td>' + (g.descripcion.length > 40 ? g.descripcion.substring(0, 40) + '...' : g.descripcion) + '</td>';
+                html += '<td><strong>' + g.importe.toFixed(2) + '€</strong></td>';
+                html += '<td><button onclick="eliminar(\'gasto\',' + g.id + ')">DEL</button></td>';
+                html += '</tr>';
+            }
+            document.getElementById('tabla-gastos').innerHTML = html;
+        }
+
+        function mostrarPagos() {
+            var html = '<tr><th>FECHA</th><th>INQUILINO</th><th>IMPORTE</th><th>ACCIÓN</th></tr>';
+            for (var i = 0; i < pagos.length; i++) {
+                var p = pagos[i];
+                html += '<tr>';
+                html += '<td>' + p.fecha + '</td>';
+                html += '<td>' + p.nombre + '</td>';
+                html += '<td><strong>' + p.importe.toFixed(2) + '€</strong></td>';
+                html += '<td><button onclick="eliminar(\'pago\',' + p.id + ')">DEL</button></td>';
+                html += '</tr>';
+            }
+            document.getElementById('tabla-pagos').innerHTML = html;
+        }
+
+        function actualizarSelectInquilinos() {
+            var selects = ['pago-inquilino', 'inquilino-selector'];
+            
+            for (var s = 0; s < selects.length; s++) {
+                var select = document.getElementById(selects[s]);
+                if (select) {
+                    var valor = select.value;
+                    var opciones = s === 0 ? '<option value="">Seleccionar inquilino...</option>' : '<option value="">Todos los inquilinos...</option>';
+                    
+                    for (var i = 0; i < inquilinos.length; i++) {
+                        opciones += '<option value="' + inquilinos[i].id + '">' + inquilinos[i].nombre + '</option>';
+                    }
+                    
+                    select.innerHTML = opciones;
+                    select.value = valor;
+                }
+            }
+        }
+
+        function actualizarStats() {
+            var totalGastos = 0;
+            for (var i = 0; i < gastos.length; i++) {
+                totalGastos += gastos[i].importe;
+            }
+            
+            var totalPagos = 0;
+            for (var i = 0; i < pagos.length; i++) {
+                totalPagos += pagos[i].importe;
+            }
+            
+            document.getElementById('stats').textContent = 
+                'Inquilinos: ' + inquilinos.length + ' | Gastos: ' + totalGastos.toFixed(2) + '€ | Pagos: ' + totalPagos.toFixed(2) + '€';
+        }
+
+        // FUNCIÓN DE BALANCES SIMPLIFICADA
+        function calcularBalance() {
+            var desde = document.getElementById('desde').value;
+            var hasta = document.getElementById('hasta').value;
+            
+            if (!desde || !hasta) {
+                mensaje('Introduce fechas de inicio y fin');
+                return;
+            }
+
+            // Convertir fechas dd/mm/yyyy a Date
+            var partesDesde = desde.split('/');
+            var partesHasta = hasta.split('/');
+            var fechaInicio = new Date(partesDesde[2], partesDesde[1] - 1, partesDesde[0]);
+            var fechaFin = new Date(partesHasta[2], partesHasta[1] - 1, partesHasta[0]);
+
+            // Calcular gastos del período
+            var gastosDelPeriodo = 0;
+            for (var i = 0; i < gastos.length; i++) {
+                var fechaGasto = new Date(gastos[i].fecha);
+                if (fechaGasto >= fechaInicio && fechaGasto <= fechaFin) {
+                    gastosDelPeriodo += gastos[i].importe;
+                }
+            }
+
+            var html = '<tr><th>INQUILINO</th><th>PERÍODO</th><th>GASTOS 50%</th><th>PAGADO</th><th>BALANCE</th></tr>';
+
+            for (var i = 0; i < inquilinos.length; i++) {
+                var inq = inquilinos[i];
+                
+                // Calcular pagos del inquilino
+                var pagadoInq = 0;
+                for (var j = 0; j < pagos.length; j++) {
+                    if (pagos[j].inquilinoId == inq.id) {
+                        pagadoInq += pagos[j].importe;
+                    }
+                }
+
+                var gastosInquilino = gastosDelPeriodo * 0.5; // 50% de los gastos
+                var balance = gastosInquilino - pagadoInq;
+                var color = balance > 0 ? '#ff4444' : balance < 0 ? '#00ff00' : '#ffff00';
+                var estado = balance > 0 ? 'DEBE' : balance < 0 ? 'A FAVOR' : 'SALDADO';
+
+                html += '<tr>';
+                html += '<td>' + inq.nombre + '</td>';
+                html += '<td>' + desde + ' - ' + hasta + '</td>';
+                html += '<td>' + gastosInquilino.toFixed(2) + '€</td>';
+                html += '<td>' + pagadoInq.toFixed(2) + '€</td>';
+                html += '<td style="color:' + color + '"><strong>' + Math.abs(balance).toFixed(2) + '€ ' + estado + '</strong></td>';
+                html += '</tr>';
+            }
+
+            html += '<tr style="border-top: 2px solid #ffff00;">';
+            html += '<td colspan="5" style="color: #ffff00; text-align: center;">';
+            html += '<strong>TOTAL GASTOS DEL PERÍODO: ' + gastosDelPeriodo.toFixed(2) + '€ | REPARTO 50%: ' + (gastosDelPeriodo * 0.5).toFixed(2) + '€ por inquilino</strong>';
+            html += '</td></tr>';
+
+            document.getElementById('tabla-balances').innerHTML = html;
+            mensaje('Balance calculado para ' + desde + ' - ' + hasta);
+        }
+
+        // FUNCIONES AUXILIARES
+        function exportarCSV() {
+            var csv = 'TIPO,FECHA,DESCRIPCION,IMPORTE\n';
+            for (var i = 0; i < gastos.length; i++) {
+                csv += 'GASTO,' + gastos[i].fecha + ',"' + gastos[i].descripcion + '",' + gastos[i].importe + '\n';
+            }
+            for (var i = 0; i < pagos.length; i++) {
+                csv += 'PAGO,' + pagos[i].fecha + ',"' + pagos[i].nombre + '",' + pagos[i].importe + '\n';
+            }
+            
+            var blob = new Blob([csv], {type: 'text/csv'});
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = 'sant_salvador_127_' + new Date().toISOString().split('T')[0] + '.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+            mensaje('CSV exportado');
+        }
+
+        function resetLocal() {
+            if (confirm('¿Borrar TODOS los datos locales?')) {
+                localStorage.clear();
+                inquilinos = [];
+                gastos = [];
+                pagos = [];
+                mostrarInquilinos();
+                mostrarGastos();
+                mostrarPagos();
+                actualizarStats();
+                mensaje('Datos locales borrados');
+            }
+        }
+
+        // INICIALIZACIÓN
+        window.onload = function() {
+            // Configurar GitHub por defecto
+            configurarGitHub();
+            
+            // Intentar cargar desde GitHub
+            cargarDesdeGitHub();
+
+            // Configurar fechas por defecto
+            var hoy = new Date();
+            var yyyy = hoy.getFullYear();
+            var mm = String(hoy.getMonth() + 1).padStart(2, '0');
+            var dd = String(hoy.getDate()).padStart(2, '0');
+            
+            document.getElementById('checkin').value = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('fecha').value = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('pago-fecha').value = dd + '/' + mm + '/' + yyyy;
+            document.getElementById('desde').value = '01/' + mm + '/' + yyyy;
+            document.getElementById('hasta').value = dd + '/' + mm + '/' + yyyy;
+            
+            mensaje('Sistema SANT SALVADOR v3.0 iniciado');
+        };
+    </script>
+</body>
+</html>
