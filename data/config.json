@@ -1,0 +1,27 @@
+{
+  "sistema": {
+    "nombre": "SANT SALVADOR 127",
+    "version": "3.0",
+    "ultimaActualizacion": "2025-09-02",
+    "autor": "Sistema de gestión de gastos compartidos"
+  },
+  "repositorio": {
+    "baseURL": "https://raw.githubusercontent.com/{usuario}/{repo}/main/data/",
+    "archivos": {
+      "inquilinos": "inquilinos.json",
+      "gastos": "gastos.json",
+      "pagos": "pagos.json"
+    }
+  },
+  "configuracion": {
+    "porcentajeReparto": 0.5,
+    "tiposGasto": ["ELECTRICIDAD", "AGUA", "GAS", "INTERNET", "OTROS"],
+    "formatoFecha": "dd/mm/yyyy",
+    "moneda": "€",
+    "calculos": {
+      "gastosAnualesProporcionales": ["OTROS"],
+      "gastosMensualesFijos": ["INTERNET"],
+      "gastosConPeriodo": ["AGUA", "GAS", "ELECTRICIDAD"]
+    }
+  }
+}
