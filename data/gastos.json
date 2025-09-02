@@ -100,4 +100,8 @@
   {
     "id": 3015,
     "tipo": "INTERNET",
-    "descripcion": "INTERNET -
+    "descripcion": "INTERNET - Coste mensual 20€ (Total anual 240.00€)",
+    "importe": 240.00,
+    "fecha": "2025-01-01"
+  }
+]
