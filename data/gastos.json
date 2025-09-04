@@ -1,230 +1,319 @@
-[
-  {
-    "fecha_emision": "2025-07-21",
-    "fecha_vencimiento": "2025-08-07",
-    "periodo_inicio": "2025-05-08",
-    "periodo_fin": "2025-07-08",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 08/05/2025 al 08/07/2025",
-    "importe": 110.17,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20254980814",
-    "consumo": "26 m³"
-  },
-  {
-    "fecha_emision": "2025-02-19",
-    "fecha_vencimiento": "2025-03-03",
-    "periodo_inicio": "2024-12-18",
-    "periodo_fin": "2025-02-17",
-    "tipo": "GAS",
-    "descripcion": "Suministro de gas natural - TotalEnergies del 18/12/2024 al 17/02/2025",
-    "importe": 90.70,
-    "empresa": "TotalEnergies Clientes, S.A.U.",
-    "numero": "1NSN250200434093",
-    "consumo": "847 kWh"
-  },
-  {
-    "fecha_emision": "2025-04-15",
-    "fecha_vencimiento": "2025-04-25",
-    "periodo_inicio": "2025-02-18",
-    "periodo_fin": "2025-04-11",
-    "tipo": "GAS",
-    "descripcion": "Suministro de gas natural - TotalEnergies del 18/02/2025 al 11/04/2025",
-    "importe": 56.85,
-    "empresa": "TotalEnergies Clientes, S.A.U.",
-    "numero": "1NSN250400327558",
-    "consumo": "490 kWh"
-  },
-  {
-    "fecha_emision": "2025-06-18",
-    "fecha_vencimiento": "2025-06-30",
-    "periodo_inicio": "2025-04-12",
-    "periodo_fin": "2025-06-12",
-    "tipo": "GAS",
-    "descripcion": "Suministro de gas natural - TotalEnergies del 12/04/2025 al 12/06/2025",
-    "importe": 72.50,
-    "empresa": "TotalEnergies Clientes, S.A.U.",
-    "numero": "1NSN250600395730",
-    "consumo": "640 kWh"
-  },
-  {
-    "fecha_emision": "2025-08-15",
-    "fecha_vencimiento": "2025-08-25",
-    "periodo_inicio": "2025-06-13",
-    "periodo_fin": "2025-08-13",
-    "tipo": "GAS",
-    "descripcion": "Suministro de gas natural - TotalEnergies del 13/06/2025 al 13/08/2025",
-    "importe": 20.96,
-    "empresa": "TotalEnergies Clientes, S.A.U.",
-    "numero": "1NSN250800368782",
-    "consumo": "58 kWh"
-  },
-  {
-    "fecha_emision": "2025-01-08",
-    "fecha_vencimiento": "2025-01-15",
-    "periodo_inicio": "2024-12-02",
-    "periodo_fin": "2024-12-31",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 02/12/2024 al 31/12/2024",
-    "importe": 102.34,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-00029288",
-    "consumo": "291.31 kWh"
-  },
-  {
-    "fecha_emision": "2025-02-06",
-    "fecha_vencimiento": "2025-02-13",
-    "periodo_inicio": "2025-01-01",
-    "periodo_fin": "2025-01-30",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 01/01/2025 al 30/01/2025",
-    "importe": 70.06,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-00316224",
-    "consumo": "164.72 kWh"
-  },
-  {
-    "fecha_emision": "2025-03-05",
-    "fecha_vencimiento": "2025-03-12",
-    "periodo_inicio": "2025-01-31",
-    "periodo_fin": "2025-03-01",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 31/01/2025 al 01/03/2025",
-    "importe": 73.41,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-00603405",
-    "consumo": "173.02 kWh"
-  },
-  {
-    "fecha_emision": "2025-04-04",
-    "fecha_vencimiento": "2025-04-11",
-    "periodo_inicio": "2025-03-02",
-    "periodo_fin": "2025-03-30",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 02/03/2025 al 30/03/2025",
-    "importe": 51.79,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-00903699",
-    "consumo": "152.20 kWh"
-  },
-  {
-    "fecha_emision": "2025-05-07",
-    "fecha_vencimiento": "2025-05-14",
-    "periodo_inicio": "2025-03-31",
-    "periodo_fin": "2025-04-30",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 31/03/2025 al 30/04/2025",
-    "importe": 44.70,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-01224379",
-    "consumo": "128.20 kWh"
-  },
-  {
-    "fecha_emision": "2025-06-04",
-    "fecha_vencimiento": "2025-06-11",
-    "periodo_inicio": "2025-05-01",
-    "periodo_fin": "2025-05-31",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 01/05/2025 al 31/05/2025",
-    "importe": 45.33,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-01540777",
-    "consumo": "157.49 kWh"
-  },
-  {
-    "fecha_emision": "2025-07-04",
-    "fecha_vencimiento": "2025-07-11",
-    "periodo_inicio": "2025-06-01",
-    "periodo_fin": "2025-06-29",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 01/06/2025 al 29/06/2025",
-    "importe": 58.41,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-01884195",
-    "consumo": "159.05 kWh"
-  },
-  {
-    "fecha_emision": "2025-08-05",
-    "fecha_vencimiento": "2025-08-12",
-    "periodo_inicio": "2025-06-30",
-    "periodo_fin": "2025-07-30",
-    "tipo": "ELECTRICIDAD",
-    "descripcion": "Suministro de electricidad - Eni Plenitude del 30/06/2025 al 30/07/2025",
-    "importe": 66.50,
-    "empresa": "Eni Plenitude Iberia, SL",
-    "numero": "F25ES-02223934",
-    "consumo": "204.63 kWh"
-  },
-  {
-    "fecha_emision": "2025-01-09",
-    "fecha_vencimiento": "2025-02-07",
-    "periodo_inicio": "2024-10-22",
-    "periodo_fin": "2024-12-19",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 22/10/2024 al 19/12/2024",
-    "importe": 292.97,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20250045039",
-    "consumo": "50 m³"
-  },
-  {
-    "fecha_emision": "2025-01-23",
-    "fecha_vencimiento": "2025-02-07",
-    "periodo_inicio": "2024-11-08",
-    "periodo_fin": "2025-01-09",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 08/11/2024 al 09/01/2025",
-    "importe": 106.93,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20250451766",
-    "consumo": "26 m³"
-  },
-  {
-    "fecha_emision": "2025-03-04",
-    "fecha_vencimiento": "2025-03-07",
-    "periodo_inicio": "2024-12-19",
-    "periodo_fin": "2025-02-18",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 19/12/2024 al 18/02/2025",
-    "importe": 143.48,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20251526079",
-    "consumo": "33 m³"
-  },
-  {
-    "fecha_emision": "2025-03-21",
-    "fecha_vencimiento": "2025-04-07",
-    "periodo_inicio": "2025-01-09",
-    "periodo_fin": "2025-03-07",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 09/01/2025 al 07/03/2025",
-    "importe": 69.83,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20251946789",
-    "consumo": "16 m³"
-  },
-  {
-    "fecha_emision": "2025-05-02",
-    "fecha_vencimiento": "2025-05-07",
-    "periodo_inicio": "2025-02-18",
-    "periodo_fin": "2025-04-22",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 18/02/2025 al 22/04/2025",
-    "importe": 121.34,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20253033973",
-    "consumo": "29 m³"
-  },
-  {
-    "fecha_emision": "2025-05-22",
-    "fecha_vencimiento": "2025-06-07",
-    "periodo_inicio": "2025-03-07",
-    "periodo_fin": "2025-05-08",
-    "tipo": "AGUA",
-    "descripcion": "Suministro de agua - Aigües de Barcelona del 07/03/2025 al 08/05/2025",
-    "importe": 96.89,
-    "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
-    "numero": "20253513319",
-    "consumo": "23 m³"
-  }
-]
+{
+  "fecha_exportacion": "2025-09-04T09:11:26.935Z",
+  "version": "v4.1",
+  "inquilinos": [
+    {
+      "id": 1001,
+      "nombre": "SERGIO Y ANA",
+      "checkin": "2025-01-01",
+      "checkout": ""
+    },
+    {
+      "id": 1002,
+      "nombre": "FLORENCIA Y MANUELA",
+      "checkin": "2025-05-01",
+      "checkout": "2025-07-31"
+    },
+    {
+      "id": 1003,
+      "nombre": "FRAN ANGULO",
+      "checkin": "2025-08-01",
+      "checkout": ""
+    }
+  ],
+  "gastos": [
+    {
+      "fecha_emision": "2025-07-21",
+      "fecha_vencimiento": "2025-08-07",
+      "periodo_inicio": "2025-05-08",
+      "periodo_fin": "2025-07-08",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 08/05/2025 al 08/07/2025",
+      "importe": 110.17,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20254980814",
+      "consumo": "26 m³"
+    },
+    {
+      "fecha_emision": "2025-02-19",
+      "fecha_vencimiento": "2025-03-03",
+      "periodo_inicio": "2024-12-18",
+      "periodo_fin": "2025-02-17",
+      "tipo": "GAS",
+      "descripcion": "Suministro de gas natural - TotalEnergies del 18/12/2024 al 17/02/2025",
+      "importe": 90.7,
+      "empresa": "TotalEnergies Clientes, S.A.U.",
+      "numero": "1NSN250200434093",
+      "consumo": "847 kWh"
+    },
+    {
+      "fecha_emision": "2025-04-15",
+      "fecha_vencimiento": "2025-04-25",
+      "periodo_inicio": "2025-02-18",
+      "periodo_fin": "2025-04-11",
+      "tipo": "GAS",
+      "descripcion": "Suministro de gas natural - TotalEnergies del 18/02/2025 al 11/04/2025",
+      "importe": 56.85,
+      "empresa": "TotalEnergies Clientes, S.A.U.",
+      "numero": "1NSN250400327558",
+      "consumo": "490 kWh"
+    },
+    {
+      "fecha_emision": "2025-06-18",
+      "fecha_vencimiento": "2025-06-30",
+      "periodo_inicio": "2025-04-12",
+      "periodo_fin": "2025-06-12",
+      "tipo": "GAS",
+      "descripcion": "Suministro de gas natural - TotalEnergies del 12/04/2025 al 12/06/2025",
+      "importe": 72.5,
+      "empresa": "TotalEnergies Clientes, S.A.U.",
+      "numero": "1NSN250600395730",
+      "consumo": "640 kWh"
+    },
+    {
+      "fecha_emision": "2025-08-15",
+      "fecha_vencimiento": "2025-08-25",
+      "periodo_inicio": "2025-06-13",
+      "periodo_fin": "2025-08-13",
+      "tipo": "GAS",
+      "descripcion": "Suministro de gas natural - TotalEnergies del 13/06/2025 al 13/08/2025",
+      "importe": 20.96,
+      "empresa": "TotalEnergies Clientes, S.A.U.",
+      "numero": "1NSN250800368782",
+      "consumo": "58 kWh"
+    },
+    {
+      "fecha_emision": "2025-01-08",
+      "fecha_vencimiento": "2025-01-15",
+      "periodo_inicio": "2024-12-02",
+      "periodo_fin": "2024-12-31",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 02/12/2024 al 31/12/2024",
+      "importe": 102.34,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-00029288",
+      "consumo": "291.31 kWh"
+    },
+    {
+      "fecha_emision": "2025-02-06",
+      "fecha_vencimiento": "2025-02-13",
+      "periodo_inicio": "2025-01-01",
+      "periodo_fin": "2025-01-30",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 01/01/2025 al 30/01/2025",
+      "importe": 70.06,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-00316224",
+      "consumo": "164.72 kWh"
+    },
+    {
+      "fecha_emision": "2025-03-05",
+      "fecha_vencimiento": "2025-03-12",
+      "periodo_inicio": "2025-01-31",
+      "periodo_fin": "2025-03-01",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 31/01/2025 al 01/03/2025",
+      "importe": 73.41,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-00603405",
+      "consumo": "173.02 kWh"
+    },
+    {
+      "fecha_emision": "2025-04-04",
+      "fecha_vencimiento": "2025-04-11",
+      "periodo_inicio": "2025-03-02",
+      "periodo_fin": "2025-03-30",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 02/03/2025 al 30/03/2025",
+      "importe": 51.79,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-00903699",
+      "consumo": "152.20 kWh"
+    },
+    {
+      "fecha_emision": "2025-05-07",
+      "fecha_vencimiento": "2025-05-14",
+      "periodo_inicio": "2025-03-31",
+      "periodo_fin": "2025-04-30",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 31/03/2025 al 30/04/2025",
+      "importe": 44.7,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-01224379",
+      "consumo": "128.20 kWh"
+    },
+    {
+      "fecha_emision": "2025-06-04",
+      "fecha_vencimiento": "2025-06-11",
+      "periodo_inicio": "2025-05-01",
+      "periodo_fin": "2025-05-31",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 01/05/2025 al 31/05/2025",
+      "importe": 45.33,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-01540777",
+      "consumo": "157.49 kWh"
+    },
+    {
+      "fecha_emision": "2025-07-04",
+      "fecha_vencimiento": "2025-07-11",
+      "periodo_inicio": "2025-06-01",
+      "periodo_fin": "2025-06-29",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 01/06/2025 al 29/06/2025",
+      "importe": 58.41,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-01884195",
+      "consumo": "159.05 kWh"
+    },
+    {
+      "fecha_emision": "2025-08-05",
+      "fecha_vencimiento": "2025-08-12",
+      "periodo_inicio": "2025-06-30",
+      "periodo_fin": "2025-07-30",
+      "tipo": "ELECTRICIDAD",
+      "descripcion": "Suministro de electricidad - Eni Plenitude del 30/06/2025 al 30/07/2025",
+      "importe": 66.5,
+      "empresa": "Eni Plenitude Iberia, SL",
+      "numero": "F25ES-02223934",
+      "consumo": "204.63 kWh"
+    },
+    {
+      "fecha_emision": "2025-01-09",
+      "fecha_vencimiento": "2025-02-07",
+      "periodo_inicio": "2024-10-22",
+      "periodo_fin": "2024-12-19",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 22/10/2024 al 19/12/2024",
+      "importe": 292.97,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20250045039",
+      "consumo": "50 m³"
+    },
+    {
+      "fecha_emision": "2025-01-23",
+      "fecha_vencimiento": "2025-02-07",
+      "periodo_inicio": "2024-11-08",
+      "periodo_fin": "2025-01-09",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 08/11/2024 al 09/01/2025",
+      "importe": 106.93,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20250451766",
+      "consumo": "26 m³"
+    },
+    {
+      "fecha_emision": "2025-03-04",
+      "fecha_vencimiento": "2025-03-07",
+      "periodo_inicio": "2024-12-19",
+      "periodo_fin": "2025-02-18",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 19/12/2024 al 18/02/2025",
+      "importe": 143.48,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20251526079",
+      "consumo": "33 m³"
+    },
+    {
+      "fecha_emision": "2025-03-21",
+      "fecha_vencimiento": "2025-04-07",
+      "periodo_inicio": "2025-01-09",
+      "periodo_fin": "2025-03-07",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 09/01/2025 al 07/03/2025",
+      "importe": 69.83,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20251946789",
+      "consumo": "16 m³"
+    },
+    {
+      "fecha_emision": "2025-05-02",
+      "fecha_vencimiento": "2025-05-07",
+      "periodo_inicio": "2025-02-18",
+      "periodo_fin": "2025-04-22",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 18/02/2025 al 22/04/2025",
+      "importe": 121.34,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20253033973",
+      "consumo": "29 m³"
+    },
+    {
+      "fecha_emision": "2025-05-22",
+      "fecha_vencimiento": "2025-06-07",
+      "periodo_inicio": "2025-03-07",
+      "periodo_fin": "2025-05-08",
+      "tipo": "AGUA",
+      "descripcion": "Suministro de agua - Aigües de Barcelona del 07/03/2025 al 08/05/2025",
+      "importe": 96.89,
+      "empresa": "Aigües de Barcelona, Empresa Metropolitana de Gestió del Cicle Integral de l'Aigua, S.A.",
+      "numero": "20253513319",
+      "consumo": "23 m³"
+    }
+  ],
+  "pagos": [
+    {
+      "id": 4001,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/02/2025"
+    },
+    {
+      "id": 4002,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/03/2025"
+    },
+    {
+      "id": 4003,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/04/2025"
+    },
+    {
+      "id": 4004,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/05/2025"
+    },
+    {
+      "id": 4005,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/06/2025"
+    },
+    {
+      "id": 4006,
+      "inquilinoId": 1001,
+      "nombre": "SERGIO Y ANA",
+      "importe": 75,
+      "fecha": "01/07/2025"
+    },
+    {
+      "id": 4007,
+      "inquilinoId": 1002,
+      "nombre": "FLORENCIA Y MANUELA",
+      "importe": 75,
+      "fecha": "01/05/2025"
+    },
+    {
+      "id": 4008,
+      "inquilinoId": 1002,
+      "nombre": "FLORENCIA Y MANUELA",
+      "importe": 75,
+      "fecha": "01/06/2025"
+    },
+    {
+      "id": 4009,
+      "inquilinoId": 1002,
+      "nombre": "FLORENCIA Y MANUELA",
+      "importe": 75,
+      "fecha": "01/07/2025"
+    }
+  ]
+}
